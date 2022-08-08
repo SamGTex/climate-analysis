@@ -1,8 +1,5 @@
-import sys
-from pathlib import Path
 import os
 import pandas as pd
-
 from methods.get_data import getWeatherForecast
 
 # get parameters from config file
@@ -38,7 +35,7 @@ print(f'Years open to download: {years_left}\n')
 
 
 for year in years_left:
-    print('Start download data from the year:', year)
+    print(f'Start download from {year}, {LOCATION}.')
     start_date = f'{year}-01-01'
     end_date = f'{year}-12-31'
 
