@@ -31,7 +31,7 @@ for year in range(YEAR_INIT, YEAR_FINIT):
         years_left.append(year)
 
 years_left.sort(reverse=True) # download nearest years first
-print(f'Years open to download: {years_left}\n')
+print(f'Left years to download: {years_left}\n')
 
 
 for year in years_left:
@@ -50,4 +50,4 @@ for year in years_left:
 
 
     df = pd.DataFrame(liste, columns=columns)
-    df.to_csv(f'../data/Dortmund {start_date} to {end_date}.csv')
+    df.to_csv(f'data/Dortmund {start_date} to {end_date}.csv')
