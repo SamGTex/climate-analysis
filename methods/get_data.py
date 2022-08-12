@@ -1,13 +1,9 @@
-import urllib.parse
 import urllib.request
 import urllib.error
 
 import sys
 import csv
 import codecs
-
-import numpy as np
-import pandas as pd
 
 def getWeatherForecast(api_key, location, unit_group, StartDate ='', EndDate=''):
 	#Downloading weather data using Python as a CSV using the Visual Crossing Weather API
