@@ -1,5 +1,11 @@
 # Climate-Analysis: Make your own climate analysis
 
+## Download weather data
+pending
+
+## Example climate analysis: Dortmund from 1973 to 2022
+pending
+
 ## Export Jupyter Notebook
 - HTML (dark theme)
 
