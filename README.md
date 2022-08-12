@@ -1,7 +1,4 @@
-# Climate report Dortmund 2022
-
-## Data source: https://www.visualcrossing.com/
-
+# Climate-Analysis: Make your own climate analysis
 
 ## Export Jupyter Notebook
 - HTML (dark theme)
@@ -12,7 +9,8 @@
 
   `jupyter nbconvert --to pdf Report_Dortmund_2022.ipynb`
 
-
 ## Todo
 - config file: metric, key, ...
 - analyze windspeed, rain, snow
+
+## Data source: https://www.visualcrossing.com/
