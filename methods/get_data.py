@@ -97,23 +97,3 @@ def getWeatherForecast(api_key, location, unit_group, StartDate ='', EndDate='')
 		print('Sorry, but it appears that there was an error retrieving the weather data.')
 		print('Error: ', FirstRow)'''
 	return CSVText
-
-
-if __name__ == '__main__':
-	# params
-	API_KEY="XFX3XC3N2BQDJ4PX78TAJSN9Q"
-	LOCATION="Dortmund"
-	UNIT_GROUP="us"
-
-	csv_file = getWeatherForecast(API_KEY, LOCATION, UNIT_GROUP)
-
-	liste = []
-	for ind,Row in enumerate(csv_file):
-		if ind==0:
-			columns=Row
-		else:
-			liste.append(Row)
-
-	
-	df = pd.DataFrame(liste, columns=columns)
-	df.to_csv('data.csv')
