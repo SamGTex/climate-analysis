@@ -4,9 +4,11 @@
 
 
 ## Export Jupyter Notebook
-- HTML (dark theme) `jupyter nbconvert Report_Dortmund_2022.ipynb --to html --HTMLExporter.theme=dark`
+- HTML (dark theme)
+  `jupyter nbconvert Report_Dortmund_2022.ipynb --to html --HTMLExporter.theme=dark`
 
-- PDF (white, article) `jupyter nbconvert --to pdf Report_Dortmund_2022.ipynb`
+- PDF (white, article)
+  `jupyter nbconvert --to pdf Report_Dortmund_2022.ipynb`
 
 
 ## Todo
