@@ -2,6 +2,8 @@ import os
 import pandas as pd
 from methods.get_data import getWeatherForecast
 
+#----------BEGIN FUNCTIONS-------------------------------------------------------------
+
 # get parameters from config.txt: 
 # api_key, location, unit_group, start_date, end_date
 def get_params(path):
@@ -49,46 +51,57 @@ def download(api_key, location, unit_group, start_date, end_date, file_names, sa
     df = pd.DataFrame(data_csv, columns=columns)
     df.to_csv(f'{save_path}/Dortmund {start_date} to {end_date}.csv')
     return
+#----------END FUNCTIONS---------------------------------------------------------------
 
-# get parameters
-API_KEY, LOCATION, UNIT_GROUP, START_DATE, END_DATE = get_params('config.txt')
+def main():
+    # get parameters
+    API_KEY, LOCATION, UNIT_GROUP, START_DATE, END_DATE = get_params('config.txt')
 
-# get initial/finit day, month and year as Integer
-year_i, month_i, day_i = map(int, START_DATE.split('-')) # start date
-year_f, month_f, day_f = map(int, END_DATE.split('-')) # end data
+    if len(API_KEY) != 25:
+        print('Please enter a valid API Key to config.txt!')
+        print('Check your account details to get you personal Key: https://www.visualcrossing.com/account')
+        return
 
-# console output
-print(f'---- Requested weather data: {START_DATE} to {END_DATE} ----')
-print('You can change the period any time in the config file.')
-print('Please take care of the date format: yyyy-mm-dd\n')
+    # get initial/finit day, month and year as Integer
+    year_i, month_i, day_i = map(int, START_DATE.split('-')) # start date
+    year_f, month_f, day_f = map(int, END_DATE.split('-')) # end data
 
-# create folder to save the requested data
-save_path = f'data/{LOCATION}_{START_DATE}_{END_DATE}'
-if not os.path.isdir(save_path):
-    os.mkdir(save_path)
+    # console output
+    print(f'---- Requested weather data: {START_DATE} to {END_DATE} ----')
+    print('You can change the period any time in the config file.')
+    print('Please take care of the date format: yyyy-mm-dd\n')
 
-# get existing file names currently saved in the target save folder
-file_names = os.listdir(save_path)
+    # create folder to save the requested data
+    save_path = f'data/{LOCATION}_{START_DATE}_{END_DATE}'
+    if not os.path.isdir(save_path):
+        os.mkdir(save_path)
 
-# download data yearly
-if year_i == year_f: #request contains maximum one year
-    start_date = f'{year_i}-{month_i}-{day_i}'
-    end_date = f'{year_i}-12-31'
-    download(API_KEY, LOCATION, UNIT_GROUP, START_DATE, END_DATE, file_names, save_path)
+    # get existing file names currently saved in the target save folder
+    file_names = os.listdir(save_path)
 
-else: #request contains several years
-    # first year
-    start_date = f'{year_i}-{month_i}-{day_i}'
-    end_date = f'{year_i}-12-31'
-    download(API_KEY, LOCATION, UNIT_GROUP, start_date, end_date, file_names, save_path)
+    # download data yearly
+    if year_i == year_f: #request contains maximum one year
+        start_date = f'{year_i}-{month_i}-{day_i}'
+        end_date = f'{year_i}-12-31'
+        download(API_KEY, LOCATION, UNIT_GROUP, START_DATE, END_DATE, file_names, save_path)
 
-    # full years exluding first and last year
-    for year in range(year_i+1, year_f):
-        start_date = f'{year}-01-01'
-        end_date = f'{year}-12-31'
+    else: #request contains several years
+        # first year
+        start_date = f'{year_i}-{month_i}-{day_i}'
+        end_date = f'{year_i}-12-31'
         download(API_KEY, LOCATION, UNIT_GROUP, start_date, end_date, file_names, save_path)
-    
-    # last year
-    start_date = f'{year_f}-01-01'
-    end_date = f'{year_f}-{month_f}-{day_f}'
-    download(API_KEY, LOCATION, UNIT_GROUP, start_date, end_date, file_names, save_path)
+
+        # full years exluding first and last year
+        for year in range(year_i+1, year_f):
+            start_date = f'{year}-01-01'
+            end_date = f'{year}-12-31'
+            download(API_KEY, LOCATION, UNIT_GROUP, start_date, end_date, file_names, save_path)
+        
+        # last year
+        start_date = f'{year_f}-01-01'
+        end_date = f'{year_f}-{month_f}-{day_f}'
+        download(API_KEY, LOCATION, UNIT_GROUP, start_date, end_date, file_names, save_path)
+
+
+if __name__=='__main__':
+    main()
