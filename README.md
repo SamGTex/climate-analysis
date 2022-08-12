@@ -1,4 +1,4 @@
-# Climate-Analysis: Make your own climate analysis
+# Climate-Analysis: Make your own Climate Analysis
 
 ## Download weather data
 pending
