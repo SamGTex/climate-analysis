@@ -35,6 +35,8 @@
 - increase of annual avg. Temperature in ten years: 0.12 °C
 
 ## Export Jupyter Notebook
+Requires [nbconvert](https://nbconvert.readthedocs.io/en/latest/install.html)
+
 - HTML (dark theme)
 
   `jupyter nbconvert Report_Dortmund_2022.ipynb --to html --HTMLExporter.theme=dark`
