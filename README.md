@@ -1,8 +1,24 @@
 # Climate-Analysis: Make your own Climate Analysis
 
 ## Download weather data
-pending
+1. Get API Key
+   - create a free account with [Visual Crossing](https://www.visualcrossing.com/) (requires email)
+   - press on the Button "Account" and copy your API-Key to clipboard
+2. Specify the requested Data
+   - open the config.txt file in an editor
+   - replace "YourPersonalKey" with the API-Key
+   - define requested data with parameters:
+     - UNIT_GROUP: default *metric* ([Documentation](https://www.visualcrossing.com/resources/documentation/weather-api/unit-groups-and-measurement-units/))
+     - LOCATION: place of the requested weather data
+     - START_DATE [yyyy-mm-dd]: the first date of the requested data range
+     - END_DATE [yyyy-mm-dd]: the last date of the requested data range
+ 3. Start Download
+    - execute `python download.py` or `python3 download.py`
+    - the new folder *data* contains the downloaded data
+    - **Attention**: Only 1000 request(days) per day free.
+      Repeat step 3 daily until the data is complete or pay for the data ([Pricing](https://www.visualcrossing.com/weather-data-editions))
 
+      
 ## Example climate analysis: Dortmund from 1973 to 2022
 
 ### I. Progress of the *daily* mean temperature
