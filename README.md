@@ -53,3 +53,10 @@ Requires [nbconvert](https://nbconvert.readthedocs.io/en/latest/install.html)
 
 ## Data Source
 https://www.visualcrossing.com/
+
+## Author
+
+**Samuel Haefs**
+
+- [Profile](https://github.com/SamGTex "Samuel Haefs")
+- [Email](mailto:samuel.haefs@tu-dortmund.de "samuel.haefs@tu-dortmund.de")
