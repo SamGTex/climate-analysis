@@ -4,7 +4,18 @@
 pending
 
 ## Example climate analysis: Dortmund from 1973 to 2022
-pending
+
+### I. Progress of the *daily* mean temperature
+![daily](figures/png/temp_timeline_1973-2022.png)
+- 4 from 5 days with highest maximum daily temperature were after or in 2019
+- all 5 days with the minimum daily temperature were before or in 1997
+- mean temperature: 10.37 °C
+
+### II. Timeline of the *yearly* minimum, maximum and average temperature
+![yearly](figures/png/annual_temp_1973-2022.png)
+- increase of annual max. Temperature in ten years: 0.75 °C
+- increase of annual min. Temperature in ten years: 0.18 °C
+- increase of annual avg. Temperature in ten years: 0.54 °C
 
 ## Export Jupyter Notebook
 - HTML (dark theme)
@@ -16,7 +27,9 @@ pending
   `jupyter nbconvert --to pdf Report_Dortmund_2022.ipynb`
 
 ## Todo
-- config file: metric, key, ...
-- analyze windspeed, rain, snow
+- [x] config file: metric, key, ...
+- [ ] analyze windspeed
+- [ ] analyze rain and snow
 
-## Data source: https://www.visualcrossing.com/
+## Data Source
+https://www.visualcrossing.com/
