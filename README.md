@@ -10,12 +10,13 @@ pending
 - 4 from 5 days with highest maximum daily temperature were after or in 2019
 - all 5 days with the minimum daily temperature were before or in 1997
 - mean temperature: 10.37 °C
+- the linear model predicts a increase of 0.14 °C in ten years
 
 ### II. Timeline of the *yearly* minimum, maximum and average temperature
 ![yearly](figures/png/annual_temp_1973-2022.png)
 - increase of annual max. Temperature in ten years: 0.75 °C
-- increase of annual min. Temperature in ten years: 0.18 °C
-- increase of annual avg. Temperature in ten years: 0.54 °C
+- increase of annual min. Temperature in ten years: 0.63 °C
+- increase of annual avg. Temperature in ten years: 0.12 °C
 
 ## Export Jupyter Notebook
 - HTML (dark theme)
@@ -27,7 +28,8 @@ pending
   `jupyter nbconvert --to pdf Report_Dortmund_2022.ipynb`
 
 ## Todo
-- [x] config file: metric, key, ...
+- [x] config file: metric, key, location, start and end data
+- [ ] explore the frequency of extreme hot/cold days
 - [ ] analyze windspeed
 - [ ] analyze rain and snow
 
