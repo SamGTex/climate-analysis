@@ -19,16 +19,16 @@
       Repeat step 3 daily until the data is complete or pay for the data ([Pricing](https://www.visualcrossing.com/weather-data-editions))
 
       
-## Example climate analysis: Dortmund from 1973 to 2022
+## Example Climate Analysis: Dortmund from 1973 to 2022
 
-### I. Progress of the *daily* mean temperature
+### I. Evolution of the *daily* mean temperature
 ![daily](figures/png/temp_timeline_1973-2022.png)
 - 4 from 5 days with highest maximum daily temperature were after or in 2019
 - all 5 days with the minimum daily temperature were before or in 1997
 - mean temperature: 10.37 °C
 - the linear model predicts a increase of 0.14 °C in ten years
 
-### II. Timeline of the *yearly* minimum, maximum and average temperature
+### II. Evolution of the *yearly* minimum, maximum and average temperature
 ![yearly](figures/png/annual_temp_1973-2022.png)
 - increase of annual max. Temperature in ten years: 0.75 °C
 - increase of annual min. Temperature in ten years: 0.63 °C
